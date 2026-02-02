@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Lock, Shield, AlertCircle, Eye, EyeOff } from 'lucide-react';
+import { Lock, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { verifyAccessCode } from '@/lib/hash';
 import { useAuth } from '@/contexts/AuthContext';
 import { FloatingParticles } from './FloatingParticles';
+import superProgrammatoreLogo from '@/assets/super-programmatore-logo.png';
 
 export function LoginPage() {
   const [code, setCode] = useState('');
@@ -45,14 +46,13 @@ export function LoginPage() {
       </div>
 
       <div className="w-full max-w-md relative z-10">
-        {/* Logo and title */}
+        {/* Logo */}
         <div className="text-center mb-8 animate-fade-in-up">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent mb-6 shadow-lg shadow-primary/30 animate-pulse-glow">
-            <Shield className="w-10 h-10 text-primary-foreground" />
-          </div>
-          <h1 className="text-4xl font-bold text-foreground mb-2">
-            Dev<span className="text-primary">Flow</span>
-          </h1>
+          <img 
+            src={superProgrammatoreLogo} 
+            alt="Super Programmatore" 
+            className="w-64 h-auto mx-auto mb-6 drop-shadow-2xl"
+          />
           <p className="text-muted-foreground">
             Inserisci il codice di accesso per continuare
           </p>
